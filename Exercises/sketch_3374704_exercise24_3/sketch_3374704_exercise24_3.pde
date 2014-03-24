@@ -1,4 +1,5 @@
-
+//This code puts a cow as the background and
+//then you can put a hat on the cow. :)
 PImage cowpicture;
 PImage hat;
 
