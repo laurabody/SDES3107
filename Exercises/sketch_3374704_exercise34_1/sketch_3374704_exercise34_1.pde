@@ -1,10 +1,11 @@
 int numFrames = 15; // The number of animation frames
 int frame = 0; // The frame to display
+int xCoordinate=0;
 PImage[] images = new  PImage[numFrames]; //Image array
 
 
 void setup() {
-size(100, 100);
+size(700, 100);
 frameRate(15); // Maximum 30 frames per second 
 images[0] = loadImage("00.jpg"); 
 images[1] = loadImage("01.jpg"); 
@@ -23,9 +24,23 @@ images[13] = loadImage("13.jpg");
 images[14] = loadImage("14.jpg");
 }
 void draw() {
+  background(255);
+xCoordinate+=4;
+if (xCoordinate >width) {
+  xCoordinate=-60;
+}
 frame++;
 if (frame == numFrames) {
 frame = 0;
 }
-image(images[frame], 0, 0);
+image(images[frame], xCoordinate, 0);
+
+fill(255 ,62, 150);
+ellipse(xCoordinate-6, 80, 20,20);
+
+fill(255 ,62, 150);
+ellipse(xCoordinate-30, 80, 20,20);
+
+
+
 }
