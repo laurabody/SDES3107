@@ -29,6 +29,7 @@
 import java.util.Calendar;
 
 PImage img;
+int numberOfBars = 60;
 
 void setup() {
   size(1024, 780);
@@ -36,20 +37,22 @@ void setup() {
   img = loadImage("pic.png");
   image(img,0,100);
   colorMode(HSB, 100,100,100, 100);
+  //frameRate(1);
 }
 
 void draw() {
   
  
+  float pixelsPerBar = width/ numberOfBars;
+  int whichBar = (int) random(0, numberOfBars);
   
-    
-  int x1 = (int) random(0, width);
+  int x1 = round(whichBar * pixelsPerBar);
   int y1 = 0;
 
-  int x2 = round(x1 + random(-7, 7));
-  int y2 = round(random(-5, 5));
+  int x2 = x1; //round(x1 + random(-7, 7));
+  int y2 = round(random(-15, 15));
 
-  int w = (int) random(35, 50);
+  int w = round(pixelsPerBar); //(int) random(35, 50);
   int h = height;
 
 // copy top left coordinate, width, height ->  top left coordinate, width height
