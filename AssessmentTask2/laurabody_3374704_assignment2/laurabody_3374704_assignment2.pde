@@ -34,15 +34,16 @@ int numberOfBars = 60;
 void setup() {
   size(1024, 780);
   background(255);
-  img = loadImage("pic.png");
+  img = loadImage("Picture.jpg");
+img.resize(0,780);
   image(img,0,100);
   colorMode(HSB, 100,100,100, 100);
-  //frameRate(1);
+  frameRate(10);
 }
 
 void draw() {
   
- 
+ //controlled the distortion of the photo by making an equal amount bars in the photo so it still remains an identifiable image. I have also changed the image to a face(Angelina jolie) to make it look more recognisable. i've also slowed the program down. 
   float pixelsPerBar = width/ numberOfBars;
   int whichBar = (int) random(0, numberOfBars);
   
