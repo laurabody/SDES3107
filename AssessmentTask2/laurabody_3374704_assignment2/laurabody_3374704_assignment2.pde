@@ -67,7 +67,7 @@ void draw() {
 
 void keyReleased() {
   if(keyCode == DELETE || keyCode == BACKSPACE) {
-    background(255);4
+    background(255);
     image(img,0,100);
     
   }
