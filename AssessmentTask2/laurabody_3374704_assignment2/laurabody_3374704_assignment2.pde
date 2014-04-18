@@ -32,6 +32,8 @@ PImage img;
 PImage img2;
 
 
+
+
 int numberOfBars = 60;
 
 void setup() {
@@ -43,6 +45,9 @@ img.resize(0,780);
   image(img,0,100);
   colorMode(HSB, 100,100,100, 100);
   frameRate(10);
+  
+  
+  
 }
 
 void draw() {
@@ -59,7 +64,7 @@ void draw() {
 
   int w = round(pixelsPerBar); //(int) random(35, 50);
   int h = height;
-  
+ 
 
 
 // copy top left coordinate, width, height ->  top left coordinate, width height
@@ -68,6 +73,7 @@ void draw() {
     float hue = map (mouseX, 0, width, 0, 100);
     float saturation = map (mouseY, 0, height, 0, 100);
    tint(hue, saturation, 100, 70);
+   
   
    
   } 
@@ -77,27 +83,27 @@ void draw() {
   
   image(tempImage, x2,y2, w,h);
 }
-//added no tint when image resets. The image also changes when the UP and DOWN keys are pressed. 
+//The image now moves from small size to large size and also in relation to the position of them mouse 
 void keyReleased() {
   if(keyCode == UP || keyCode == DOWN) {
     noTint();
     background(0,0,0);
-   img2 = loadImage("bradpitt.jpg");
    img.resize(0,780);
-  image(img2,0,100);
+  image(img,0,100);
     
     
   }
    if(keyCode == LEFT || keyCode == RIGHT) {
     noTint();
     background(0,0,0);
-   img2 = loadImage("Picture.jpg");
-   img.resize(0,780);
-  image(img,0,100);
+   img.resize(width/2,height/2);
+  image(img,mouseX, mouseY);
+
+
+   }
+   
     
-    
-  }
-  if(key=='s' || key=='S') saveFrame(timestamp()+"_##.png");
+
 }
 
 // timestamp
