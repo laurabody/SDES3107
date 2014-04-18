@@ -88,6 +88,15 @@ void keyReleased() {
     
     
   }
+   if(keyCode == LEFT || keyCode == RIGHT) {
+    noTint();
+    background(0,0,0);
+   img2 = loadImage("Picture.jpg");
+   img.resize(0,780);
+  image(img,0,100);
+    
+    
+  }
   if(key=='s' || key=='S') saveFrame(timestamp()+"_##.png");
 }
 
